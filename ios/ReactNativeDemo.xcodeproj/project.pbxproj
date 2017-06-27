@@ -14,6 +14,7 @@
 		0F0B3CC31F00A30A008CB858 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F0B3CC11F00A30A008CB858 /* LaunchScreen.storyboard */; };
 		0F0B3CCE1F00A30A008CB858 /* ReactNativeDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F0B3CCD1F00A30A008CB858 /* ReactNativeDemoTests.m */; };
 		0F0B3CD91F00A30A008CB858 /* ReactNativeDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F0B3CD81F00A30A008CB858 /* ReactNativeDemoUITests.m */; };
+		0F8570721F01F8D000260FB6 /* index.ios.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 0F8570701F01F8D000260FB6 /* index.ios.jsbundle */; };
 		45619EAA991888928D181473 /* libPods-ReactNativeDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A4DCCECE5B0D3B40FA96D4D /* libPods-ReactNativeDemo.a */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		0F0B3CD41F00A30A008CB858 /* ReactNativeDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactNativeDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F0B3CD81F00A30A008CB858 /* ReactNativeDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReactNativeDemoUITests.m; sourceTree = "<group>"; };
 		0F0B3CDA1F00A30A008CB858 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0F8570701F01F8D000260FB6 /* index.ios.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = index.ios.jsbundle; sourceTree = "<group>"; };
 		0FF8EF281F00E0AB005A058D /* libReact.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libReact.a; path = "Pods/../build/Debug-iphoneos/React/libReact.a"; sourceTree = "<group>"; };
 		0FF8EF2A1F00E0B0005A058D /* libYoga.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libYoga.a; path = "../../../Library/Developer/Xcode/DerivedData/ReactNativeDemo-dbuekkabipflvvdnazwfmwgimpki/Build/Products/Debug-iphonesimulator/Yoga/libYoga.a"; sourceTree = "<group>"; };
 		7A4DCCECE5B0D3B40FA96D4D /* libPods-ReactNativeDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ReactNativeDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +110,7 @@
 		0F0B3CB21F00A30A008CB858 /* ReactNativeDemo */ = {
 			isa = PBXGroup;
 			children = (
+				0F85706F1F01F8D000260FB6 /* Bundle */,
 				0F0B3CB61F00A30A008CB858 /* AppDelegate.h */,
 				0F0B3CB71F00A30A008CB858 /* AppDelegate.m */,
 				0F0B3CB91F00A30A008CB858 /* ViewController.h */,
@@ -144,6 +147,14 @@
 				0F0B3CDA1F00A30A008CB858 /* Info.plist */,
 			);
 			path = ReactNativeDemoUITests;
+			sourceTree = "<group>";
+		};
+		0F85706F1F01F8D000260FB6 /* Bundle */ = {
+			isa = PBXGroup;
+			children = (
+				0F8570701F01F8D000260FB6 /* index.ios.jsbundle */,
+			);
+			path = Bundle;
 			sourceTree = "<group>";
 		};
 		4531E79CA75E2A6E3403BD21 /* Frameworks */ = {
@@ -277,6 +288,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F8570721F01F8D000260FB6 /* index.ios.jsbundle in Resources */,
 				0F0B3CC31F00A30A008CB858 /* LaunchScreen.storyboard in Resources */,
 				0F0B3CC01F00A30A008CB858 /* Assets.xcassets in Resources */,
 			);
