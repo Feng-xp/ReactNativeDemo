@@ -4,6 +4,9 @@ PODS:
     - Yoga (= 0.43.4.React)
   - React/cxxreact (0.43.4):
     - React/jschelpers
+  - React/DevSupport (0.43.4):
+    - React/Core
+    - React/RCTWebSocket
   - React/jschelpers (0.43.4)
   - React/RCTNetwork (0.43.4):
     - React/Core
@@ -15,6 +18,7 @@ PODS:
 
 DEPENDENCIES:
   - React/Core (from `../node_modules/react-native`)
+  - React/DevSupport (from `../node_modules/react-native`)
   - React/RCTNetwork (from `../node_modules/react-native`)
   - React/RCTText (from `../node_modules/react-native`)
   - React/RCTWebSocket (from `../node_modules/react-native`)
@@ -30,6 +34,6 @@ SPEC CHECKSUMS:
   React: 607aa7eb8b0e44b102f95f43fd49dc8aedefa93f
   Yoga: 2a70bc5ab41486a272b9fd5b76c482ba9268c5dd
 
-PODFILE CHECKSUM: 663c43f4361c2729f4f05b99d31a91f51191858c
+PODFILE CHECKSUM: 64c378e76f019af4b8b936681100f4fa5e0ab675
 
 COCOAPODS: 1.2.1

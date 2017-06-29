@@ -32,7 +32,7 @@
 
 - (void)onButtonTapped:(UIButton *)button
 {
-    NSURL *jsCodeLocation = [NSURL URLWithString:@"http://localhost:8081/index.ios.bundle?platform=ios"];
+    NSURL *jsCodeLocation = [NSURL URLWithString:@"http://10.0.74.37:8081/index.ios.bundle?platform=ios"];
     
 //    jsCodeLocation = [NSURL URLWithString:[[NSBundle mainBundle] pathForResource:@"index.ios.jsbundle" ofType:nil]];
     
