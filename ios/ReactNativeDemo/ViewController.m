@@ -10,7 +10,33 @@
 
 #import <React/RCTRootView.h>
 
-@interface ViewController ()
+@interface JSModuleObject : NSObject
+
+@property (nonatomic) NSString  *moduleKey;
+@property (nonatomic) NSString  *moduleUrl;
+@property (nonatomic) NSString  *moduleName;
+
++ (JSModuleObject *)objectWithKey:(NSString *)key url:(NSString *)url name:(NSString *)name;
+
+@end
+
+@implementation JSModuleObject
+
++ (JSModuleObject *)objectWithKey:(NSString *)key url:(NSString *)url name:(NSString *)name
+{
+    JSModuleObject *object = [[JSModuleObject alloc] init];
+    object.moduleKey = key;
+    object.moduleUrl = url;
+    object.moduleName = name;
+    return object;
+}
+
+@end
+
+@interface ViewController () <UITableViewDelegate, UITableViewDataSource>
+
+@property (nonatomic) UITableView   *tableView;
+@property (nonatomic) NSArray       *datasource;
 
 @end
 
@@ -22,19 +48,48 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake((self.view.frame.size.width - 120)/2, 120, 120, 60)];
-    [button setTitle:@"走进React" forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-    [button addTarget:self action:@selector(onButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
-    [button setBackgroundColor:[UIColor lightGrayColor]];
-    [self.view addSubview:button];
+    self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    _tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+    _tableView.rowHeight = 60;
+    _tableView.tableFooterView = [UIView new];
+    [self.view addSubview:_tableView];
+    
+    _datasource = @[[JSModuleObject objectWithKey:@"UI Interface" url:@"js/index.ios.bundle" name:@"RNHighScores"],
+                    [JSModuleObject objectWithKey:@"Animation" url:@"js/index.ios.bundle" name:@"RNHighScores"],
+                    [JSModuleObject objectWithKey:@"Gesture" url:@"js/index.ios.bundle" name:@"RNHighScores"],
+                    [JSModuleObject objectWithKey:@"Native" url:@"js/index.ios.bundle" name:@"RNHighScores"],
+                    [JSModuleObject objectWithKey:@"UI Interface" url:@"js/index.ios.bundle" name:@"RNHighScores"],
+                    [JSModuleObject objectWithKey:@"UI Interface" url:@"js/index.ios.bundle" name:@"RNHighScores"],
+                    [JSModuleObject objectWithKey:@"UI Interface" url:@"js/index.ios.bundle" name:@"RNHighScores"]];
 }
 
-- (void)onButtonTapped:(UIButton *)button
+#pragma mark - UITableViewDelegate && UITableViewDatasource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSURL *jsCodeLocation = [NSURL URLWithString:@"http://10.0.74.37:8081/index.ios.bundle?platform=ios"];
+    return _datasource.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"];
     
-//    jsCodeLocation = [NSURL URLWithString:[[NSBundle mainBundle] pathForResource:@"index.ios.jsbundle" ofType:nil]];
+    cell.textLabel.text = ((JSModuleObject *)_datasource[indexPath.row]).moduleKey;
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    JSModuleObject *object = _datasource[indexPath.row];
+    
+    NSString *url = [NSString stringWithFormat:@"http://10.0.74.37:8081/%@?platform=ios",object.moduleUrl];
+    NSURL *jsCodeLocation = [NSURL URLWithString:url];
     
     NSDictionary *props = @{
                             @"scores" : @[
@@ -49,14 +104,14 @@
                                     ]
                             };
     
-    RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL: jsCodeLocation
-                                                        moduleName: @"RNHighScores"
+    RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
+                                                        moduleName:object.moduleName
                                                  initialProperties:props
                                                      launchOptions:nil];
     
     UIViewController *vc = [[UIViewController alloc] init];
     vc.view = rootView;
-    [self presentViewController:vc animated:YES completion:nil];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
