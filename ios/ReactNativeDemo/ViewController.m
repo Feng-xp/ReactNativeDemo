@@ -7,8 +7,7 @@
 //
 
 #import "ViewController.h"
-
-#import <React/RCTRootView.h>
+#import "RNViewController.h"
 
 @interface JSModuleObject : NSObject
 
@@ -104,14 +103,7 @@
                                     ]
                             };
     
-    RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL:jsCodeLocation
-                                                        moduleName:object.moduleName
-                                                 initialProperties:props
-                                                     launchOptions:nil];
-    
-    UIViewController *vc = [[UIViewController alloc] init];
-    vc.view = rootView;
-    [self.navigationController pushViewController:vc animated:YES];
+    [self.navigationController pushViewController:[[RNViewController alloc] initWithBundleURL:jsCodeLocation moduleName:object.moduleName initialProperties:props launchOptions:nil] animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
