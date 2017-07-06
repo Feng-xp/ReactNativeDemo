@@ -57,7 +57,7 @@
     _tableView.tableFooterView = [UIView new];
     [self.view addSubview:_tableView];
     
-    _datasource = @[[JSModuleObject objectWithKey:@"UI Interface" url:@"js/index.ios.bundle" name:@"RNHighScores"],
+    _datasource = @[[JSModuleObject objectWithKey:@"UI Interface" url:@"js/FlatList/index.ios.bundle" name:@"NewsList"],
                     [JSModuleObject objectWithKey:@"Animation" url:@"js/index.ios.bundle" name:@"RNHighScores"],
                     [JSModuleObject objectWithKey:@"Gesture" url:@"js/index.ios.bundle" name:@"RNHighScores"],
                     [JSModuleObject objectWithKey:@"Native" url:@"js/index.ios.bundle" name:@"RNHighScores"],
@@ -88,7 +88,7 @@
     
     JSModuleObject *object = _datasource[indexPath.row];
     
-    NSString *url = [NSString stringWithFormat:@"http://10.0.74.37:8081/%@?platform=ios",object.moduleUrl];
+    NSString *url = [NSString stringWithFormat:@"http://localhost:8081/%@?platform=ios",object.moduleUrl];
     NSURL *jsCodeLocation = [NSURL URLWithString:url];
     
     NSDictionary *props = @{
