@@ -15,7 +15,10 @@
 		0F0B3CCE1F00A30A008CB858 /* ReactNativeDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F0B3CCD1F00A30A008CB858 /* ReactNativeDemoTests.m */; };
 		0F0B3CD91F00A30A008CB858 /* ReactNativeDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F0B3CD81F00A30A008CB858 /* ReactNativeDemoUITests.m */; };
 		0F612EA71F0E374B0028ADEC /* RNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F612EA61F0E374B0028ADEC /* RNViewController.m */; };
-		0F612EAA1F0E3C670028ADEC /* RNProfileView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F612EA91F0E3C670028ADEC /* RNProfileView.m */; };
+		0F74D2AC1F0F57D2009C6861 /* RNPerfMonitorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F74D2AB1F0F57D2009C6861 /* RNPerfMonitorManager.m */; };
+		0F74D2AF1F0F580A009C6861 /* RNPerfMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F74D2AE1F0F580A009C6861 /* RNPerfMonitor.m */; };
+		0F74D2B21F0F6F4A009C6861 /* RNFPSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F74D2B11F0F6F4A009C6861 /* RNFPSUtils.m */; };
+		0F74D2C01F0F834E009C6861 /* RNEventEmitter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F74D2BF1F0F834E009C6861 /* RNEventEmitter.m */; };
 		0F8570721F01F8D000260FB6 /* index.ios.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 0F8570701F01F8D000260FB6 /* index.ios.jsbundle */; };
 		45619EAA991888928D181473 /* libPods-ReactNativeDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A4DCCECE5B0D3B40FA96D4D /* libPods-ReactNativeDemo.a */; };
 /* End PBXBuildFile section */
@@ -55,8 +58,14 @@
 		0F0B3CDA1F00A30A008CB858 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F612EA51F0E374B0028ADEC /* RNViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNViewController.h; sourceTree = "<group>"; };
 		0F612EA61F0E374B0028ADEC /* RNViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNViewController.m; sourceTree = "<group>"; };
-		0F612EA81F0E3C670028ADEC /* RNProfileView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNProfileView.h; sourceTree = "<group>"; };
-		0F612EA91F0E3C670028ADEC /* RNProfileView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNProfileView.m; sourceTree = "<group>"; };
+		0F74D2AA1F0F57D2009C6861 /* RNPerfMonitorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNPerfMonitorManager.h; sourceTree = "<group>"; };
+		0F74D2AB1F0F57D2009C6861 /* RNPerfMonitorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNPerfMonitorManager.m; sourceTree = "<group>"; };
+		0F74D2AD1F0F580A009C6861 /* RNPerfMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNPerfMonitor.h; sourceTree = "<group>"; };
+		0F74D2AE1F0F580A009C6861 /* RNPerfMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNPerfMonitor.m; sourceTree = "<group>"; };
+		0F74D2B01F0F6F4A009C6861 /* RNFPSUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNFPSUtils.h; sourceTree = "<group>"; };
+		0F74D2B11F0F6F4A009C6861 /* RNFPSUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNFPSUtils.m; sourceTree = "<group>"; };
+		0F74D2BE1F0F834E009C6861 /* RNEventEmitter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNEventEmitter.h; sourceTree = "<group>"; };
+		0F74D2BF1F0F834E009C6861 /* RNEventEmitter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNEventEmitter.m; sourceTree = "<group>"; };
 		0F8570701F01F8D000260FB6 /* index.ios.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = index.ios.jsbundle; sourceTree = "<group>"; };
 		0FF8EF281F00E0AB005A058D /* libReact.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libReact.a; path = "Pods/../build/Debug-iphoneos/React/libReact.a"; sourceTree = "<group>"; };
 		0FF8EF2A1F00E0B0005A058D /* libYoga.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libYoga.a; path = "../../../Library/Developer/Xcode/DerivedData/ReactNativeDemo-dbuekkabipflvvdnazwfmwgimpki/Build/Products/Debug-iphonesimulator/Yoga/libYoga.a"; sourceTree = "<group>"; };
@@ -121,10 +130,10 @@
 				0F0B3CB71F00A30A008CB858 /* AppDelegate.m */,
 				0F0B3CB91F00A30A008CB858 /* ViewController.h */,
 				0F0B3CBA1F00A30A008CB858 /* ViewController.m */,
-				0F612EA81F0E3C670028ADEC /* RNProfileView.h */,
-				0F612EA91F0E3C670028ADEC /* RNProfileView.m */,
 				0F612EA51F0E374B0028ADEC /* RNViewController.h */,
 				0F612EA61F0E374B0028ADEC /* RNViewController.m */,
+				0F74D2BD1F0F833A009C6861 /* RNEventEmitter */,
+				0F74D2A91F0F57C1009C6861 /* RNPerformance */,
 				0F0B3CBF1F00A30A008CB858 /* Assets.xcassets */,
 				0F0B3CC11F00A30A008CB858 /* LaunchScreen.storyboard */,
 				0F0B3CC41F00A30A008CB858 /* Info.plist */,
@@ -157,6 +166,28 @@
 				0F0B3CDA1F00A30A008CB858 /* Info.plist */,
 			);
 			path = ReactNativeDemoUITests;
+			sourceTree = "<group>";
+		};
+		0F74D2A91F0F57C1009C6861 /* RNPerformance */ = {
+			isa = PBXGroup;
+			children = (
+				0F74D2AA1F0F57D2009C6861 /* RNPerfMonitorManager.h */,
+				0F74D2AB1F0F57D2009C6861 /* RNPerfMonitorManager.m */,
+				0F74D2AD1F0F580A009C6861 /* RNPerfMonitor.h */,
+				0F74D2AE1F0F580A009C6861 /* RNPerfMonitor.m */,
+				0F74D2B01F0F6F4A009C6861 /* RNFPSUtils.h */,
+				0F74D2B11F0F6F4A009C6861 /* RNFPSUtils.m */,
+			);
+			path = RNPerformance;
+			sourceTree = "<group>";
+		};
+		0F74D2BD1F0F833A009C6861 /* RNEventEmitter */ = {
+			isa = PBXGroup;
+			children = (
+				0F74D2BE1F0F834E009C6861 /* RNEventEmitter.h */,
+				0F74D2BF1F0F834E009C6861 /* RNEventEmitter.m */,
+			);
+			path = RNEventEmitter;
 			sourceTree = "<group>";
 		};
 		0F85706F1F01F8D000260FB6 /* Bundle */ = {
@@ -374,10 +405,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F612EA71F0E374B0028ADEC /* RNViewController.m in Sources */,
-				0F612EAA1F0E3C670028ADEC /* RNProfileView.m in Sources */,
+				0F74D2B21F0F6F4A009C6861 /* RNFPSUtils.m in Sources */,
 				0F0B3CBB1F00A30A008CB858 /* ViewController.m in Sources */,
+				0F74D2C01F0F834E009C6861 /* RNEventEmitter.m in Sources */,
 				0F0B3CB81F00A30A008CB858 /* AppDelegate.m in Sources */,
+				0F74D2AF1F0F580A009C6861 /* RNPerfMonitor.m in Sources */,
 				0F0B3CB51F00A30A008CB858 /* main.m in Sources */,
+				0F74D2AC1F0F57D2009C6861 /* RNPerfMonitorManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

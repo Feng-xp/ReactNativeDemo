@@ -1,6 +1,7 @@
 'use strict';
 
 import React from 'react';
+import { NativeModules,NativeEventEmitter } from 'react-native';
 import {
 	AppRegistry,
 	StyleSheet,
@@ -19,13 +20,25 @@ for (var i = 20; i >= 0; i--) {
 }
 
 class NewsList extends React.Component {
-		render() {
-				return (
-						<FlatList
-				data={dataSource}
-				renderItem={({item}) => <NewsListCell item={item}></NewsListCell>}
-				initialNumToRender = {10}
-			/>
+
+	componentWillMount() {
+		const RNEventEmitter = new NativeEventEmitter(NativeModules.RNEventEmitter);
+		const subscription = RNEventEmitter.addListener('performanceEvent',
+			(reminder) => {
+				console.log(reminder)
+			});
+
+		var RNPerfMonitorManager = NativeModules.RNPerfMonitorManager;
+		RNPerfMonitorManager.performanceInfo('Birthday Party');
+	}
+
+	render() {
+			return (
+					<FlatList
+			data={dataSource}
+			renderItem={({item}) => <NewsListCell item={item}></NewsListCell>}
+			initialNumToRender = {10}
+		/>
 		);
 	}
 }

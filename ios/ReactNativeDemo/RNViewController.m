@@ -7,12 +7,12 @@
 //
 
 #import "RNViewController.h"
-#import "RNProfileView.h"
+#import "RNPerfMonitor.h"
 #import <React/RCTRootView.h>
 
 @interface RNViewController ()
 
-@property (nonatomic) RNProfileView *profile;
+@property (nonatomic) RNPerfMonitor *profile;
 
 @end
 
@@ -38,9 +38,9 @@
 {
     [super viewDidAppear:animated];
     
-//    self.profile = [[RNProfileView alloc] init];
-//    [_profile setBridge:((RCTRootView*)self.view).bridge];
-//    [_profile show];
+    self.profile = [[RNPerfMonitor alloc] init];
+    
+//    [_profile startMonitorWithBrige:((RCTRootView*)self.view).bridge];
 }
 
 - (void)viewDidLoad {
